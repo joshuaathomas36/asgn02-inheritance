@@ -1,41 +1,69 @@
 <?php
+
 class Bird {
   var $commonName;
-  $this->commonName = "Bird";
-  protected $habitat;
-  protected $nestLocation;
-  protected $footStructer;
-  protected $diet;
-  protected $conservationLevel();
+  var $habitat;
+  var $nestLocation;
+  var $footStructer;
+  var $diet;
+  var $conservationLevel;
+  var $averageWeight = 0.0;
+
+  public function averageWeight() {
+    return "The average weight of this bird is " . $this->averageWeight . "oz";
+  }
+
+  public function set_averageWeight($value) {
+    $this->averageWeight = floatval($value);
+  }
+
 }
 
 class Woodpecker extends Bird {
   var $favoriteTree;
-  $this->favoriteTree = "dead tree";
+  public function favoriteTree() {
+    return $this->favoriteTree = "dead tree";
+  }
 }
 
 class GrayHawk extends Bird {
   var $topSpeed;
-  $this->topSpeed = "93 mph";
+  public function topSpeed() {
+    return $this->topSpeed = "93 mph";
+  }
 }
 
 class FishCrow extends Bird {
   var $funFacts;
-  $this->funFacts = "Members of a mated pair frequently preen the back of each other's head.";
+  public function funFacts() {
+    return $this->funFacts = "Members of a mated pair frequently preen the back of each other's head.";
+  }
 }
 
+$birds = new Bird;
+$woodpecker = new Woodpecker;
+$grayHawk = new GrayHawk;
+$fishCrow = new FishCrow;
 
-$Woodpecker->commonName = "Woodpecker";
-$GrayHawk->commonName = "Gray Hawk";
-$FishCrow->commonName = "Fish Crow";
+echo $birds->commonName = "Types of Birds with some facts" . "<br />";
+echo "<hr />";
 
-echo $Woodpecker->commonName . "<br />";
-echo $Woodpecker->favoriteTree . "<br />";
+echo $woodpecker->commonName = "Woodpecker" . "<br />";
+echo $woodpecker->favoriteTree() . "<br />";
+$woodpecker->set_averageWeight(0.25);
+echo $woodpecker->averageWeight() . "<br />";
+echo "<hr />";
 
-echo $GrayHawk->commonName . "<br />";
-echo $GrayHawk->topSpeed . "<br />";
+echo $grayHawk->commonName = "Grey Hawk" . "<br />";
+echo $grayHawk->topSpeed() . "<br />";
+$grayHawk->set_averageWeight(16.8);
+echo $grayHawk->averageWeight() . "<br />";
+echo "<hr />";
 
-echo $FishCrow->commonName . "<br />";
-echo $FishCrow->funFacts . "<br />";
+echo $fishCrow->commonName = "Fish Crow" . "<br />";
+echo $fishCrow->funFacts() . "<br />";
+$fishCrow->set_averageWeight(10);
+echo $fishCrow->averageWeight() . "<br />";
+echo "<hr />";
 
 ?>

@@ -41,10 +41,6 @@ class Unicycle extends Bicycle {
 	protected $wheels = 1;
 }
 
-
-
-
-
 $trek = new Bicycle;
 $trek->brand = 'Trek';
 $trek->model = 'Emonda';
